@@ -20,17 +20,17 @@ public class MvcMemberSaveServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("username");
-        int age = Integer.parseInt(request.getParameter("age"));
+        int age = Integer.parseInt(request.getParameter("age")); //파라미터 받고
 
         Member member = new Member(username, age);
-        memberRepository.save(member);
+        memberRepository.save(member); //비즈니스 로직 호출하고
 
         //Model에 데이터를 보관한다.
-        request.setAttribute("member", member);
+        request.setAttribute("member", member); //모델에 데이터 담고
 
         String viewPath = "/WEB-INF/views/save-result.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response); //뷰로 던지고
 
     }
 }
