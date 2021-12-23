@@ -18,6 +18,9 @@ import java.util.Map;
 @WebServlet(name = "FrontControllerServletV3", urlPatterns = "/front-controller/v3/*")
 public class FrontControllerServletV3 extends HttpServlet {
 
+    /**
+     * 무슨 용법인지 모르겠음
+     */
     private Map<String, ControllerV3> controllerMap = new HashMap<>();
 
     public FrontControllerServletV3() {
@@ -38,7 +41,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         }
 
         //paramMap
-
+        // 이해안됨
         Map<String, String> paramMap = createParamMap(request);
         ModelView mv = controller.process(paramMap);
 
