@@ -25,6 +25,7 @@ public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
         Map<String, String> paramMap = createParamMap(request);
         HashMap<String, Object> model = new HashMap<>();
 
+        //controller.process가 왜 컨트롤러들로 이동하는지 모르겠음
         String viewName = controller.process(paramMap, model);
 
         ModelView mv = new ModelView(viewName);
