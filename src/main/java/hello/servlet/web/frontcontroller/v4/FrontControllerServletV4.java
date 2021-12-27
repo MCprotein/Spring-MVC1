@@ -37,7 +37,7 @@ public class FrontControllerServletV4 extends HttpServlet {
 
         Map<String, String> paramMap = createParamMap(request);
         Map<String, Object> model = new HashMap<>(); //추가
-        String viewName = controller.process(paramMap, model);
+        String viewName = controller.process(paramMap, model); //이해 살짝 안됨
 
         MyView view = viewResolver(viewName);
 
